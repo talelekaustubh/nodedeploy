@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-hub-info'  // Docker Hub credentials in Jenkins
+        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'  // Docker Hub credentials stored in Jenkins
         DOCKER_IMAGE = 'nodeapp'                          // Name of the Docker image
         DOCKER_TAG = 'latest'                             // Tag for the Docker image
         DOCKER_REGISTRY = 'docker.io/sksupremeboss' // Docker Hub username
@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build the Docker image from the Dockerfile
+                    // Build the Docker image from the Dockerfile in the root directory
                     docker.build("${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${DOCKER_TAG}")
                 }
             }

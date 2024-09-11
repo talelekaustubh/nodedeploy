@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'  // Docker Hub credentials stored in Jenkins
-        DOCKER_IMAGE = 'nodeapp'                          // Name of the Docker image
+        DOCKER_IMAGE = 'sksupremeboss/nodeapp'                          // Name of the Docker image
         DOCKER_TAG = 'latest'                             // Tag for the Docker image
         DOCKER_REGISTRY = 'docker.io/sksupremeboss' // Docker Hub username
     }
